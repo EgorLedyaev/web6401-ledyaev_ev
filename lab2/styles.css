@@ -1,0 +1,191 @@
+/* Базовые цвета и переменные */
+:root {
+  --bg: #f7f9fc;
+  --text: #1a1d21;
+  --accent: #e91e63;
+  --brand: #0d47a1;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* Типовой селектор */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Шапка и навигация */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--brand);
+  display: inline-block;
+  padding: 14px 0;
+}
+
+/* Селектор потомка */
+.logo span {
+  color: var(--accent);
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 14px 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Псевдокласс */
+.site-nav a:hover {
+  color: var(--brand);
+}
+
+.site-nav a.active {
+  border-bottom: 2px solid var(--brand);
+}
+
+/* Герой */
+.hero {
+  background: linear-gradient(120deg, #ffffff, #e3f2fd);
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Селектор по id */
+#hero h1 {
+  font-size: 2rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #1565c0;
+}
+
+/* Атрибутный селектор + декоративная метка внешней ссылки */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+/* Сетки и карточки */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Селектор дочернего элемента */
+.card > h3 {
+  margin-top: 0;
+}
+
+.photo figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.page-title {
+  margin: 24px 0;
+}
+
+/* Таблица с выравниванием */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table caption {
+  caption-side: top;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.table thead th {
+  background: #f3f4f6;
+}
+
+.table th, .table td {
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+
+.hint {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* Подвал */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 24px 0;
+  color: var(--muted);
+}
+
+.small-note { font-size: 0.875rem; }
