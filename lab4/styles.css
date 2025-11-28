@@ -1,0 +1,266 @@
+/* Базовые цвета и переменные */
+:root {
+  /* Базовые палитры */
+  --white: #ffffff;
+  --bg: #f7f9fc;
+  --text: #1a1d21;
+  --accent: #e91e63;
+  --brand: #0d47a1;
+  --brand-hover: #1565c0;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --table-header: #f3f4f6;
+
+  /* Для анимаций в rgba() */
+  --brand-rgb: 13, 71, 161;
+
+  /* Для градиентов */
+  --hero-from: #ffffff;
+  --hero-to: #e3f2fd;
+}
+
+/* Типовой селектор */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Шапка и навигация */
+.site-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Flexbox шапка: контейнер, логотип и навигация */
+.site-header .container {
+  display: flex;              /* Flexbox */
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--brand);
+  display: inline-block;
+  padding: 14px 0;
+}
+
+/* Селектор потомка */
+.logo span {
+  color: var(--accent);
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 14px 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Псевдокласс */
+.site-nav a:hover {
+  color: var(--brand);
+}
+
+.site-nav a.active {
+  border-bottom: 2px solid var(--brand);
+}
+
+/* Герой */
+.hero {
+  background: linear-gradient(120deg, var(--hero-from), var(--hero-to));
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Селектор по id */
+#hero h1 {
+  font-size: 2rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--brand-hover);
+}
+
+/* Анимация "пульса" для красивой кнопки */
+.btn--pulse {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translateZ(0) scale(1); box-shadow: 0 0 0 rgba(var(--brand-rgb), 0.0); }
+  50% { transform: translateZ(0) scale(1.03); box-shadow: 0 12px 24px rgba(var(--brand-rgb), 0.18); }
+  100% { transform: translateZ(0) scale(1); box-shadow: 0 0 0 rgba(var(--brand-rgb), 0.0); }
+}
+
+/* Атрибутный селектор + декоративная метка внешней ссылки */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+/* Сетки и карточки */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Flexbox карточки для страницы еды */
+.flex {
+  display: flex;              /* Flexbox */
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.flex .card {
+  flex: 1 1 260px;            /* адаптивная ширина карточек */
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Селектор дочернего элемента */
+.card > h3 {
+  margin-top: 0;
+}
+
+.photo figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.page-title {
+  margin: 24px 0;
+}
+
+/* Таблица с выравниванием */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table caption {
+  caption-side: top;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.table thead th {
+  background: var(--table-header);
+}
+
+.table th, .table td {
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+
+.hint {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* Подвал */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 24px 0;
+  color: var(--muted);
+}
+
+.small-note { font-size: 0.875rem; }
+
+/* BEM-стили для формы */
+.form {
+  max-width: 420px;
+  margin: 24px auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.form__title { margin: 0 0 12px; }
+.form__group { margin-bottom: 12px; }
+.form__label { display: block; font-weight: 600; margin-bottom: 6px; }
+.form__input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+}
+.form__input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(13,71,161,0.12); }
+.form__row { display: flex; align-items: center; gap: 8px; }
+.form__hint { color: var(--muted); font-size: 0.9rem; }
+
+.form__submit { margin-top: 12px; }
+
+/* Небольшой эффект при отправке формы */
+.form.submitted { animation: flash 0.8s ease; }
+@keyframes flash {
+  0% { box-shadow: 0 0 0 rgba(233,30,99,0); }
+  50% { box-shadow: 0 0 0 6px rgba(233,30,99,0.2); }
+  100% { box-shadow: 0 0 0 rgba(233,30,99,0); }
+}

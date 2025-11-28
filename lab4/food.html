@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Еда в Москве</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><span>Москва</span> мини‑гайд</a>
+      <nav class="site-nav">
+        <a href="index.html">Главная</a>
+        <a href="sights.html">Достопримечательности</a>
+        <a href="food.html" class="active">Еда</a>
+        <a href="plan.html">План визита</a>
+        <a href="form.html">Авторизация</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-title">
+      <h1>Еда в Москве</h1>
+      <p>Классические блюда и места, где можно попробовать аутентичную кухню.</p>
+    </section>
+
+    <!-- Страница с Flexbox: карточки блюд располагаются флексами -->
+    <section class="flex">
+      <article class="card">
+        <figure class="photo">
+          <img src="assets/borscht.jpg" alt="Борщ" loading="lazy" decoding="async" />
+          <figcaption>Борщ</figcaption>
+        </figure>
+        <p>Сытный суп со свеклой и мясом. Подаётся со сметаной и зеленью.</p>
+      </article>
+
+      <article class="card">
+        <figure class="photo">
+          <img src="assets/pelmeni.jpg" alt="Пельмени" loading="lazy" decoding="async" />
+          <figcaption>Пельмени</figcaption>
+        </figure>
+        <p>Небольшие варёные изделия из теста с мясной начинкой. Подаются со сметаной или маслом.</p>
+      </article>
+
+      <article class="card">
+        <figure class="photo">
+          <img src="assets/blini2.jpg" alt="Блины" loading="lazy" decoding="async" />
+          <figcaption>Блины</figcaption>
+        </figure>
+        <p>Тонкие блинчики с начинками: сметана, варенье, мёд, икра.</p>
+      </article>
+
+      <article class="card">
+        <figure class="photo">
+          <img src="assets/pirozhki.jpg" alt="Пирожки" loading="lazy" decoding="async" />
+          <figcaption>Пирожки</figcaption>
+        </figure>
+        <p>Выпечка с различными начинками: капуста, мясо, картофель, яблоки.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Где попробовать</h2>
+      <p>Ищите аутентичные блюда в столовых и кафе рядом с центром, на рынках и фуд-кортах. Популярные места: ГУМ, Даниловский рынок, и многочисленные городские гастро‑проекты.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Мини‑гайд по Москве.</p>
+    </div>
+  </footer>
+</body>
+</html>
